@@ -2,12 +2,16 @@ import { RxButton } from "react-icons/rx";
 import { PiTextbox } from "react-icons/pi";
 import { useEffect, useState } from "react";
 import useStore from "./useStore";
+import { TbContainer } from "react-icons/tb";
+
 
 
 
 const Toolsbar = () => {
 
     const addbtn = useStore((state) => state.addbtn)
+    const adddiv = useStore((state) => state.adddiv)
+    const addinput = useStore((state) => state.addinput)
 
 
 
@@ -16,6 +20,15 @@ const Toolsbar = () => {
         addbtn()
     }
 
+
+    function _adddiv(){
+        adddiv()
+    }
+
+
+    function _addinput(){
+        addinput()
+    }
 
     
 
@@ -38,13 +51,14 @@ const Toolsbar = () => {
                 />
             </button>
 
-            <button className=" hover:bg-blue-700  font-bold py-2 px-4 rounded">
+            <button onClick={_addinput} className=" hover:bg-blue-700  font-bold py-2 px-4 rounded">
                 <PiTextbox
                     size={20}
                 />
             </button>
-            <button className=" hover:bg-blue-700  font-bold py-2 px-4 rounded">
-                B
+            <button onClick={_adddiv} className=" hover:bg-blue-700  font-bold py-2 px-4 rounded">
+            <TbContainer />
+
             </button>
 
             <button className=" hover:bg-blue-700  font-bold py-2 px-4 rounded">
